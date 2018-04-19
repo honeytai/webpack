@@ -1,0 +1,4 @@
+过程中遇到的问题：
+Error: Cannot find module 'webpack/lib/node/NodeTemplatePlugin'
+需要局部安装webpack
+cnpm install webpack@2 --save-dev 即可
