@@ -48,3 +48,16 @@ module.exports = {
   	'autoprefixer': {browsers: ['last 5 versions']}
   }
 }
+loader: 'style-loader!css-loader?importLoaders=1!postcss-loader' 如果有@import的时候，可以传入参数指定import的数量
+注意：postcss-loader 放置在css-loader 和 less-loader之间
+如果css中@import需要传入参数 但是less中@import的时候不需要 同理sass
+
+处理模板文件
+html-loader:
+ejs-loader: 模板引擎 
+jsx已经集成到了buble中 
+
+处理图片 file-loader
+1. css中添加了一个图片 直接指定loader即可
+2. 根目录的index.html中有一个图片标签 直接loader
+3. 
