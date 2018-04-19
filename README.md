@@ -28,7 +28,14 @@ compilation.assets[].source();
 如果有publicPath的时候： htmlWebpackPlugin.files.chunks.main.entry.substring(htmlWebpackPlugin.files.publicPath.length)
 
 loader:传参数可以使用？
-1.  babel-loader babel-core babel-preset-env(在json文件中“babel”: {"presets": ["env"]})
+1.  babel-loader babel-core babel-preset-env(在json文件中“babel”: {"presets": ["env"]}) 
+或者新建一个文件夹 
+.babelrc
+{
+  "presets": ["env"]
+}
+
+
 module: {
 rules: [
 {
@@ -42,7 +49,7 @@ include:
 }
 2. css-loader style-loader
 3. postcss-loader 包括 autoprefixer
-autoprefixer的配置：新建一个文件
+autoprefixer的配置：新建一个文件postcss.config.js
 module.exports = {
   plugins: {
   	'autoprefixer': {browsers: ['last 5 versions']}
@@ -74,3 +81,5 @@ Base64的原理很简单，首先，准备一个包含64个字符的数组：
 这样我们得到4个数字作为索引，然后查表，获得相应的4个字符，就是编码后的字符串。
 所以，Base64编码会把3字节的二进制数据编码为4字节的文本数据，长度增加33%，好处是编码后的文本数据可以在邮件正文、网页等直接显示。
 Base64是一种任意二进制到文本字符串的编码方法，常用于在URL、Cookie、网页中传输少量二进制数据。
+
+缩小图片：image-webpack-loader最好结合url-loader一起使用
